@@ -1,11 +1,11 @@
-# 03-If-Else-Methoden
+# 03-If-Else Methods
 
 ## If-Else
 
-### If-Anweisungen
+### If Statements
 
-If-Anweisungen sind Fallunterscheidungen:
-- wenn [...], dann [...]
+If statements are used for conditional branching:
+- if [...], then [...]
 
 Keyword: _if_ \
 \
@@ -15,13 +15,15 @@ if (condition) {
     [...]; // Code for true condition
 }
 ```
-### Vereinfachen von Bedingungen:
-Sei x ein boolean: `boolean x`
-- (x == true) vereinfacht zu (x), wenn `x = true`
-- (x == false) vereinfacht zu (!x), wenn `x = false`
+### Simplifying Conditions:
+Let x be a boolean: `boolean x`
 
-### If-Else-Anweisungen
-- wenn [...], dann [...], sonst [...]
+- (x == true) simplifies to (x) if `x = true`
+- (x == false) simplifies to (!x) if `x = false`
+
+
+### If-Else Statements
+- if […], then […], else […]
 
 Keywords: _if_, _else_ \
 \
@@ -33,13 +35,13 @@ if (condition) {
     [...]; // Code for false condition
 }
 ```
-In beiden Fällen: \ 
-Die condition muss vom Type _boolean_ sein!
+In both cases: \
+The condition must be of type _boolean_!
 
 ### Nesting
-Nesting ist das Verschachteln von (in diesem Falle) if-, bzw if-else-Anweisungen
+Nesting involves nesting if or if-else statements within each other.
 
-Beispiel:
+Example:
 ```java
 if (condition1) {
     if (condition2) {
@@ -59,23 +61,23 @@ if (condition1) {
     }
 ```
 
-# Methoden
-Die erste Methode haben wir bereits kennengelernt: _main_ \
+# Methods
+We’ve already encountered the first method: _main_ \
 
 ### Methodensignatur
 `public` `static` `void` `main` `(String[] args)` {}
-- `public`: Zugriffsrecht! Wer darf diese Methode nutzen? Später nocht mehr.
-- `static`: Später noch mehr dazu.
-- `void`: Rückgabewert, void = ohne Rückgabe
-- `main`: Methodenname, wie auch bei Variablen: camelCase!
-- `(String[] args)`: Übergabeparameter / Argumente
+- `public`: Access modifier. Specifies who can use this method. More on this later.
+- `static`: More on this later.
+- `void`: Return type. Void means no return value.
+- `main`: Method name, following camelCase convention.
+- `(String[] args)`: Parameters passed to the method.
 
-Methoden werden genutzt um Code auszulagern und können somit an verschiedenen Stellen des Codes wiederverwendet werden (Stichwort _Reusability_)
+Methods are used to encapsulate code and can be reused at different points in the code (_reusability_).
 
 ## Scope
 
-Der Scope bezeichnet die Region, in dem zum Beispiel eine Variable zur Verfügung steht. \
-Dabei gilt, dass eine Variable, in dem aktuellen, sowie jedem tieferen Codeblock zur Verfügung steht, aber nicht darüber hinaus:
+Scope refers to the region where a variable is accessible.
+A variable is available in the current block and any nested blocks, but not beyond:
 ```java
 if (condition1) {
     if (condition2) {
@@ -92,38 +94,38 @@ if (condition1) {
 
 ## Rückgabe
 
-Rückgabetyp in Methodensignatur definiert:
+The return type is defined in the method signature: 
 `public static void main() {}` -> **void**
 
 Keywords: _return_ \
 \
-Beispiel:
+Example:
 ```
 public static int getInteger() {
     return 5;
 }
 ```
-Bei Methodenaufruf, wird der Integer _5_ zurückgegeben:
+When calling the method, it returns the integer value _5_:
 ```
 int test = getInteger(); // test = 5
 ```
 \
-Findet keine Zuweisung statt wird der Rückgabewert "verworfen", bzw ignoriert:
+If no assignment occurs, the return value is discarded or ignored:
 ```
 getInteger(); // No assignment, return value is ignored
 ```
 
-## Übergabeparameter / Argumente
+## Parameters / Arguments
 
-Durch Ändern der Methodensignatur können für eine Methode Übergabeparameter, bzw Argumente definiert werden:
+By modifying the method signature, you can define parameters or arguments for a method:
 ```
 public static void isLivingOnEarth(boolean livingOnEarth, int age){}
 ```
-Die in diesem Beispiel definierten Argumente sind:
+In this example, the defined arguments are:
 - boolean livingOnEarth
 - int age 
 
-Beide sind nun über den jeweiligen Variablennamen innerhalb der Methode zugänglich, müssen aber bei Methodenaufruf **in der korrekten Reihenfolge** übergeben werden:
+Both are accessible within the method using their respective variable names and **must be passed in the correct order** when calling the method:
 ```
 isLivingOnEarth(true, 18);
 ```
